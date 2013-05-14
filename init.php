@@ -28,11 +28,15 @@ class Af_fullfeed extends Plugin {
 	function hook_article_filter($article) {
 		$owner_uid = $article["owner_uid"];
         $targets = array(
-             array('link'=>"asahi.com"    ,'xpath'=>'(//div[@class="BodyTxt"])') //'(//div[@id="MainInner"])'
-            ,array('link'=>"rbbtoday.com" ,'xpath'=>'(//div[@id="articleItem"])')
-            ,array('link'=>"rss.rssad.jp",'xpath'=>'(//div[@class="main-contents mainContents"])') //impress.co.jp
-            ,array('link'=>"rss.rssad.jp",'xpath'=>'(//div[@id="cmsBody"]/div[@class="inner"])') //itmedia.co.jp
-            ,array('link'=>"livedoor.com" ,'xpath'=>'(//div[@id="main"])')
+             array('link'=>"asahi.com"    ,'xpath'=>'(//div[@class="BodyTxt"])')
+            ,array('link'=>"livedoor.com"  ,'xpath'=>'(//div[@id="main"])')
+            ,array('link'=>"nikkeibp.co.jp",'xpath'=>'(//div[@id="kijiBox"])')
+            ,array('link'=>"phpspot.org"   ,'xpath'=>'(//div[@class="entrybody"])')
+            ,array('link'=>"rbbtoday.com"  ,'xpath'=>'(//div[@id="articleItem"])')
+            ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@class="main-contents mainContents"])') //impress.co.jp
+            ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@id="cmsBody"]/div[@class="inner"])') //itmedia.co.jp
+            ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@class="content"])') //gigazine.net
+            ,array('link'=>"yahoo.co.jp"   ,'xpath'=>'(//div[@class="rics-column bd"])')
         );
 
         foreach ( $targets as $target) {
