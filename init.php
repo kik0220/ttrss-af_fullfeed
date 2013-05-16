@@ -28,15 +28,16 @@ class Af_fullfeed extends Plugin {
 	function hook_article_filter($article) {
 		$owner_uid = $article["owner_uid"];
         $targets = array(
-             array('link'=>"asahi.com"    ,'xpath'=>'(//div[@class="BodyTxt"])')
+             array('link'=>"asahi.com"     ,'xpath'=>'(//div[@class="BodyTxt"])')
+            ,array('link'=>"impress.co.jp" ,'xpath'=>'(//div[@lass="main-contents mainContents column stapablog column-stapablog"])') //stapablog
             ,array('link'=>"livedoor.com"  ,'xpath'=>'(//div[@id="main"])')
             ,array('link'=>"nikkeibp.co.jp",'xpath'=>'(//div[@id="kijiBox"])')
             ,array('link'=>"phpspot.org"   ,'xpath'=>'(//div[@class="entrybody"])')
             ,array('link'=>"rbbtoday.com"  ,'xpath'=>'(//div[@id="articleItem"])')
             ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@class="main-contents mainContents"])') //impress.co.jp
             ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@id="cmsBody"]/div[@class="inner"])') //itmedia.co.jp
-            ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//div[@class="content"])') //gigazine.net
-            ,array('link'=>"yahoo.co.jp"   ,'xpath'=>'(//div[@class="rics-column bd"])')
+            ,array('link'=>"rss.rssad.jp"  ,'xpath'=>'(//*[@class="preface"])') //gigazine.net
+            // ,array('link'=>"yahoo.co.jp"   ,'xpath'=>'(//*[@class="articleInnr"])')
         );
 
         foreach ( $targets as $target) {
